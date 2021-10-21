@@ -1,2 +1,15 @@
-#Not set relative path of picture list
-#Require to change picture list path code with debug or test
+# CharacterMatchingGame
+- 그림 맞추기 게임
+- 개발기간: 2019.02.25 ~ 2019.03.01
+- 참여인원: 1명 (Raynia)
+- 주제: tvN 예능 '신서유기'에서 등장한 그림 맞추기 게임을 WinForm을 활용하여 개발한 프로그램
+
+# 개발환경
+- Visual Studio 2017
+- C#
+- WinForm
+
+# 알려진 문제점
+- 이미지 파일이 존재하지 않을 경우, 예외 처리가 되지 않음
+- 이미지 파일의 최대치가 하드 코딩됨
+- 1.png와 같이 파일의 이름이 숫자이고 png 확장자가 아닌 이미지 파일은 인식할 수 없음
