@@ -113,29 +113,29 @@ namespace Picture_Test
 
             // 결과 화면 설정
 
-            Size ResultScrennButtonSize = new Size(300, 75);
-            Size ResultSccrennLabelSize = new Size(900, 300);
-            Font ResultScrennButtonFont = new Font(FontFamily.GenericSansSerif, 20.0f);
+            Size ResultScreenButtonSize = new Size(300, 75);
+            Size ResultScreenLabelSize = new Size(900, 300);
+            Font ResultScreenButtonFont = new Font(FontFamily.GenericSansSerif, 20.0f);
             Font ResultScreenLabelFont = new Font(FontFamily.GenericSansSerif, 150.0f);
             GameResultLabel = new Label
             {
                 TextAlign = ContentAlignment.MiddleCenter,
                 Font = ResultScreenLabelFont,
-                Size = ResultSccrennLabelSize
+                Size = ResultScreenLabelSize
             };
             BacktoMainButton = new Button
             {
                 Text = "메인으로",
                 TextAlign = ContentAlignment.MiddleCenter,
-                Font = ResultScrennButtonFont,
-                Size = ResultScrennButtonSize
+                Font = ResultScreenButtonFont,
+                Size = ResultScreenButtonSize
             };
             GameRestartButton = new Button
             {
                 Text = "재시작",
                 TextAlign = ContentAlignment.MiddleCenter,
-                Font = ResultScrennButtonFont,
-                Size = ResultScrennButtonSize
+                Font = ResultScreenButtonFont,
+                Size = ResultScreenButtonSize
             };
             GameResultLabel.Location = new Point(this.Size.Width / 2 - GameResultLabel.Size.Width / 2, this.Size.Height / 2 - GameResultLabel.Size.Height / 2);
             BacktoMainButton.Location = new Point(this.Size.Width / 2 - BacktoMainButton.Size.Width - 100, GameResultLabel.Location.Y + GameResultLabel.Size.Height + 100);
@@ -173,13 +173,15 @@ namespace Picture_Test
             CurrentPictureCount = 1;
         }
 
-        private void PictureRefresh(int picture_number)
+        private void PictureRefresh(int PictureNumber)
         {
-            const string MESSAGE = "파일을 찾을 수 없습니다\n파일을 확인 후 다시 실행해주십시오";
+            const string MESSAGE = "파일을 찾을 수 없습니다\n파일을 확인 후 다시 실행해주십시오\n";
             const string CAPTION = "파일 오류";
+            string FilePath = "";
             try
             {
-                GameImage = new Bitmap(IMAGE_FILE_PATH + picture_number.ToString() + IMAGE_FILE_EXTENSION);
+                FilePath = System.Windows.Forms.Application.StartupPath + IMAGE_FILE_PATH + PictureNumber.ToString() + IMAGE_FILE_EXTENSION;
+                GameImage = new Bitmap(FilePath);
                 picture_box.Image = GameImage;
                 picture_box.Size = GameImage.Size;
                 picture_box.Location = new Point(this.Size.Width / 2 - picture_box.Size.Width / 2, this.Size.Height / 2 - picture_box.Size.Height / 2);
